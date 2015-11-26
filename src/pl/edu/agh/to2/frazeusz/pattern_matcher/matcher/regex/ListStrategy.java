@@ -11,7 +11,7 @@ public class ListStrategy implements IMatchingStrategy {
     private List<IMatchingStrategy> strategies = new LinkedList<>();
 
     @Override
-    public String format(SearchPattern pattern) {
+    public String format(String pattern) {
         return null;
     }
 

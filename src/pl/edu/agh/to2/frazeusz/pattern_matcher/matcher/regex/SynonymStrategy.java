@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class SynonymStrategy implements IMatchingStrategy {
     @Override
-    public String format(SearchPattern pattern) {
+    public String format(String pattern) {
         return null;
     }
 
