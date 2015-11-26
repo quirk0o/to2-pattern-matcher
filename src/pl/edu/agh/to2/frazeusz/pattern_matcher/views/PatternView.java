@@ -1,25 +1,15 @@
-package pl.edu.agh.to2.frazeusz.pattern_matcher;
+package pl.edu.agh.to2.frazeusz.pattern_matcher.views;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
-public class PatternUI extends JPanel {
+public class PatternView extends JPanel {
 
     private JPanel patternPanel;
     private JPanel buttonPanel;
     private JButton addButton;
 
-//    public static void main(String[] args) {
-//        JFrame frame = new JFrame("PatternUI");
-//        frame.setContentPane(new PatternUI());
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.pack();
-//        frame.setVisible(true);
-//    }
-
-    public PatternUI() {
+    public PatternView() {
         createUIComponents();
     }
 

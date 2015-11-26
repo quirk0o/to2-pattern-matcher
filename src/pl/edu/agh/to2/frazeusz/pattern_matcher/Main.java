@@ -1,15 +1,14 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher;
 
+import pl.edu.agh.to2.frazeusz.pattern_matcher.views.PatternView;
+
 import javax.swing.*;
-import java.io.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
 
     private static void createGUI() {
         JFrame frame = new JFrame("PatternUI");
-        frame.setContentPane(new PatternUI());
+        frame.setContentPane(new PatternView());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

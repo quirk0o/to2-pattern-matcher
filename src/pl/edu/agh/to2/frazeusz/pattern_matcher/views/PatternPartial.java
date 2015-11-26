@@ -1,4 +1,4 @@
-package pl.edu.agh.to2.frazeusz.pattern_matcher;
+package pl.edu.agh.to2.frazeusz.pattern_matcher.views;
 
 import pl.edu.agh.to2.frazeusz.models.SearchPattern;
 
@@ -20,7 +20,7 @@ public class PatternPartial extends JPanel {
     }
 
 
-    private void bindModel() {
+    private void bindModel(SearchPattern model) {
         patternTextField.addPropertyChangeListener(e -> model.setPattern(patternTextField.getText()));
         caseSensitiveCheckBox.addPropertyChangeListener(e -> model.setCaseSensitive(caseSensitiveCheckBox.isSelected()));
         synonymsCheckBox.addPropertyChangeListener(e -> model.setSynonyms(synonymsCheckBox.isSelected()));
@@ -42,5 +42,7 @@ public class PatternPartial extends JPanel {
         this.add(synonymsCheckBox);
         this.add(variantCheckBox);
         this.add(diminutiveCheckBox);
+
+        bindModel(model);
     }
 }
