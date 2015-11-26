@@ -5,6 +5,7 @@ import pl.edu.agh.to2.frazeusz.pattern_matcher.IMatchListener;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.IMatchProvider;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.IMatcher;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,7 +35,7 @@ public class RegexMatcher implements IMatcher, IMatchProvider {
 
     private Pattern compile() {
 
-        String pattern = matchingStrategy.format(this.pattern);
+        String pattern = matchingStrategy.format(this.pattern.getPattern());
 
         // Remove additional whitespace
         pattern = pattern.trim();
@@ -67,12 +68,21 @@ public class RegexMatcher implements IMatcher, IMatchProvider {
         Matcher whitespaceMatcher = whitespacePattern.matcher(patternBuffer);
         String newPattern = whitespaceMatcher.replaceAll(escape(whitespaceReplace));
 
-        return Pattern.compile(newPattern);
+        return matchingStrategy.compile(newPattern);
     }
 
     @Override
     public List<String> match(List<String> sentences) {
-        return null;
+        Pattern pattern = compile();
+
+        List<String> result = new ArrayList<>(sentences.size());
+        for (String sentence : sentences) {
+            Matcher matcher = pattern.matcher(sentence);
+            if (matcher.find())
+                result.add(sentence);
+        }
+
+        return result;
     }
 
     @Override

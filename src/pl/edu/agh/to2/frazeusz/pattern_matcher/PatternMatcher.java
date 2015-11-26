@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PatternMatcher implements IPatternMatcher, IMatchProvider {
+public class PatternMatcher implements IPatternMatcher {
 
     private MonitorPubSub monitor;
 
@@ -27,7 +27,6 @@ public class PatternMatcher implements IPatternMatcher, IMatchProvider {
         this.wordProvider = wordProvider;
     }
 
-    @Override
     public List<SearchPattern> getPatterns() {
         return patterns;
     }
@@ -43,7 +42,7 @@ public class PatternMatcher implements IPatternMatcher, IMatchProvider {
 
     @Override
     public List<String> match(List<String> sentences, String url) {
-        return null;
+        return new ArrayList<>();
     }
 
     @Override

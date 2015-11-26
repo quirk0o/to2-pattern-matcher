@@ -2,7 +2,6 @@ package pl.edu.agh.to2.frazeusz.pattern_matcher;
 
 import pl.edu.agh.to2.frazeusz.models.SearchPattern;
 import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
-import pl.edu.agh.to2.frazeusz.pattern_matcher.IMatchProvider;
 
 import java.util.List;
 

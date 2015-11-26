@@ -2,14 +2,14 @@ package pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex;
 
 import java.util.regex.Pattern;
 
-public class VariantStrategy implements IMatchingStrategy {
+public class EmptyStrategy implements IMatchingStrategy {
     @Override
     public String format(String pattern) {
-        return null;
+        return pattern;
     }
 
     @Override
     public Pattern compile(String pattern) {
-        return null;
+        return Pattern.compile(pattern);
     }
 }
