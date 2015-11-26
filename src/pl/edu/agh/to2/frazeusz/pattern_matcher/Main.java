@@ -18,9 +18,6 @@ public class Main {
 
         createGUI();
 
-
-
-
 //        String[] patterns = {
 //                "to",
 //                "to **",

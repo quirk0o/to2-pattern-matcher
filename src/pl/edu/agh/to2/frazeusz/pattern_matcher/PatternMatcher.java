@@ -3,7 +3,6 @@ package pl.edu.agh.to2.frazeusz.pattern_matcher;
 import pl.edu.agh.to2.frazeusz.models.SearchPattern;
 import pl.edu.agh.to2.frazeusz.monitor.MonitorPubSub;
 import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
-import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.IPatternMatcher;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.views.PatternView;
 
 import java.util.ArrayList;
