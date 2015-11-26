@@ -28,7 +28,7 @@ public class Main {
 //        };
 //
 //        for (String pattern : patterns) {
-//            Pattern p = PatternCompiler.compile(pattern);
+//            Pattern p = PatternCompiler.format(pattern);
 //            System.out.println(pattern);
 //
 //            try {

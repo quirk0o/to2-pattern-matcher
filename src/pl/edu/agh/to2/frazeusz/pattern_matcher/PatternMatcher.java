@@ -37,6 +37,10 @@ public class PatternMatcher implements IPatternMatcher, IMatchProvider {
         this.wordProvider = wordProvider;
     }
 
+    public PatternView getView() {
+        return view;
+    }
+
     @Override
     public List<String> match(List<String> sentences, String url) {
         return null;
