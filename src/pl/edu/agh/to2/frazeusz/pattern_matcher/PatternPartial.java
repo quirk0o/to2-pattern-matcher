@@ -5,6 +5,9 @@ import pl.edu.agh.to2.frazeusz.models.SearchPattern;
 import javax.swing.*;
 
 public class PatternPartial extends JPanel {
+
+    private SearchPattern model;
+
     private JTextField patternTextField;
     private JButton deleteButton;
     private JCheckBox caseSensitiveCheckBox;
@@ -14,6 +17,15 @@ public class PatternPartial extends JPanel {
 
     public PatternPartial() {
         createUIComponents();
+    }
+
+
+    private void bindModel() {
+        patternTextField.addPropertyChangeListener(e -> model.setPattern(patternTextField.getText()));
+        caseSensitiveCheckBox.addPropertyChangeListener(e -> model.setCaseSensitive(caseSensitiveCheckBox.isSelected()));
+        synonymsCheckBox.addPropertyChangeListener(e -> model.setSynonyms(synonymsCheckBox.isSelected()));
+        variantCheckBox.addPropertyChangeListener(e -> model.setVariants(variantCheckBox.isSelected()));
+        diminutiveCheckBox.addPropertyChangeListener(e -> model.setDiminutives(diminutiveCheckBox.isSelected()));
     }
 
     private void createUIComponents() {
