@@ -1,12 +1,15 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher.views;
 
 import pl.edu.agh.to2.frazeusz.models.SearchPattern;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.IPatternController;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class PatternPartial extends JPanel {
 
     private SearchPattern model;
+    private IPatternController controller;
 
     private JTextField patternTextField;
     private JButton deleteButton;
@@ -15,10 +18,18 @@ public class PatternPartial extends JPanel {
     private JCheckBox variantCheckBox;
     private JCheckBox diminutiveCheckBox;
 
-    public PatternPartial() {
+    public PatternPartial(SearchPattern model) {
+        this.model = model;
         createUIComponents();
     }
 
+    public SearchPattern getModel() {
+        return model;
+    }
+
+    public void setModel(SearchPattern model) {
+        this.model = model;
+    }
 
     private void bindModel(SearchPattern model) {
         patternTextField.addPropertyChangeListener(e -> model.setPattern(patternTextField.getText()));
@@ -26,6 +37,10 @@ public class PatternPartial extends JPanel {
         synonymsCheckBox.addPropertyChangeListener(e -> model.setSynonyms(synonymsCheckBox.isSelected()));
         variantCheckBox.addPropertyChangeListener(e -> model.setVariants(variantCheckBox.isSelected()));
         diminutiveCheckBox.addPropertyChangeListener(e -> model.setDiminutives(diminutiveCheckBox.isSelected()));
+    }
+
+    public void addDeleteListener(ActionListener listener) {
+        deleteButton.addActionListener(listener);
     }
 
     private void createUIComponents() {

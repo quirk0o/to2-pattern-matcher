@@ -1,26 +1,37 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher.views;
 
+import pl.edu.agh.to2.frazeusz.models.SearchPattern;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.IPatternController;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 
-public class PatternView extends JPanel {
+public class PatternView extends JPanel implements ActionListener {
+
+    private List<SearchPattern> model;
+    private IPatternController controller;
 
     private JPanel patternPanel;
     private JPanel buttonPanel;
     private JButton addButton;
 
-    public PatternView() {
+    public PatternView(List<SearchPattern> patterns, IPatternController controller) {
+        model = patterns;
         createUIComponents();
     }
 
-    public void addPattern() {
-        patternPanel.add(new PatternPartial());
+    private void addPatternInput() {
+        PatternPartial partial = new PatternPartial(controller.addPattern());
+        partial.addDeleteListener(this);
+        patternPanel.add(partial);
         patternPanel.revalidate();
         validate();
-
     }
 
-    public void removePattern(PatternPartial pattern) {
+    private void removePatternInput(PatternPartial pattern) {
         patternPanel.remove(pattern);
         patternPanel.revalidate();
         validate();
@@ -29,10 +40,15 @@ public class PatternView extends JPanel {
     private void createUIComponents() {
         patternPanel = new JPanel();
         patternPanel.setLayout(new BoxLayout(patternPanel, BoxLayout.PAGE_AXIS));
-        patternPanel.add(new PatternPartial());
+
+        if (model.isEmpty())
+            addPatternInput();
+        else
+            for (SearchPattern pattern : model)
+                patternPanel.add(new PatternPartial(pattern));
 
         addButton = new JButton("Dodaj");
-        addButton.addActionListener(e -> addPattern());
+        addButton.addActionListener(e -> addPatternInput());
 
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
@@ -43,5 +59,14 @@ public class PatternView extends JPanel {
         this.setLayout(new BorderLayout());
         this.add(patternPanel, BorderLayout.PAGE_START);
         this.add(buttonPanel, BorderLayout.PAGE_END);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().getClass().equals(PatternPartial.class)) {
+            PatternPartial partial = (PatternPartial) e.getSource();
+            controller.removePattern(partial.getModel());
+            removePatternInput(partial);
+        }
     }
 }
