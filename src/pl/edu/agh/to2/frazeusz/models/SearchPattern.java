@@ -1,11 +1,14 @@
 package pl.edu.agh.to2.frazeusz.models;
 
 public class SearchPattern {
-    private String pattern;
-    private Boolean caseSensitive;
-    private Boolean synonyms;
-    private Boolean variants;
-    private Boolean diminutives;
+    private String pattern = "";
+    private Boolean caseSensitive = false;
+    private Boolean synonyms = false;
+    private Boolean variants = false;
+    private Boolean diminutives = false;
+
+    public SearchPattern() {
+    }
 
     public SearchPattern(String pattern) {
         this.pattern = pattern;
