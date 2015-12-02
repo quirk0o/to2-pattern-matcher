@@ -8,6 +8,7 @@ import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex.RegexMatcher;
 import javax.swing.*;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Main {
 
     private static void createGUI() {
         JFrame frame = new JFrame("PatternUI");
-        IPatternController patternController = new PatternController();
+        IPatternController patternController = new PatternController(new ArrayList<>());
         patternController.init();
         frame.setContentPane(patternController.getView());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
