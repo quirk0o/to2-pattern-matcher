@@ -1,3 +1,5 @@
+*.zip
+*.vpp
 .idea
 
 *.class
