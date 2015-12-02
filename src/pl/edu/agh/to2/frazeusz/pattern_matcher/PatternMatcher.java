@@ -4,6 +4,7 @@ import pl.edu.agh.to2.frazeusz.models.SearchPattern;
 import pl.edu.agh.to2.frazeusz.monitor.MonitorPubSub;
 import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.views.PatternView;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -27,10 +28,6 @@ public class PatternMatcher implements IPatternMatcher {
         this.wordProvider = wordProvider;
     }
 
-    public List<SearchPattern> getPatterns() {
-        return patterns;
-    }
-
     @Override
     public void setWordProvider(IWordProvider wordProvider) {
         this.wordProvider = wordProvider;
@@ -42,17 +39,19 @@ public class PatternMatcher implements IPatternMatcher {
 
     @Override
     public List<String> match(List<String> sentences, String url) {
-        return new ArrayList<>();
+        throw new NotImplementedException();
     }
 
     @Override
-    public void addPattern(SearchPattern pattern) {
-
+    public SearchPattern addPattern() {
+        SearchPattern pattern = new SearchPattern();
+        patterns.add(pattern);
+        return pattern;
     }
 
     @Override
     public void removePattern(SearchPattern pattern) {
-
+        patterns.remove(pattern);
     }
 
     @Override
