@@ -12,10 +12,6 @@ public class PatternController implements IPatternController {
     private List<SearchPattern> patterns;
     private PatternView view;
 
-    public PatternController() {
-        patterns = new ArrayList<>();
-    }
-
     public PatternController(List<SearchPattern> patterns) {
         this.patterns = patterns;
     }
