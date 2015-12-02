@@ -20,14 +20,10 @@ public class PatternMatcher implements IPatternMatcher {
 
     private List<IMatchListener> listeners = new LinkedList<>();
 
-    private IPatternController controller;
-
     public PatternMatcher(String url, IWordProvider wordProvider, MonitorPubSub monitor) {
         this.monitor = monitor;
         this.url = url;
         this.wordProvider = wordProvider;
-
-        this.controller = new PatternController(patterns);
     }
 
     @Override
@@ -35,15 +31,16 @@ public class PatternMatcher implements IPatternMatcher {
         this.wordProvider = wordProvider;
     }
 
-    public JPanel getView() {
-        if (controller.getView() == null)
-            controller.init();
-        return controller.getView();
-    }
-
     @Override
     public List<String> match(List<String> sentences, String url) {
         throw new NotImplementedException();
+    }
+
+    @Override
+    public JPanel getView() {
+        IPatternController controller = new PatternController(patterns);
+        controller.init();
+        return controller.getView();
     }
 
     @Override
