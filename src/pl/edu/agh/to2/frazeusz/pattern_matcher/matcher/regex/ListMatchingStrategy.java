@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class ListStrategy implements IMatchingStrategy {
+public class ListMatchingStrategy implements IMatchingStrategy {
 
     private List<IMatchingStrategy> strategies = new LinkedList<>();
 
