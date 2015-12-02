@@ -20,6 +20,7 @@ public class PatternView extends JPanel implements ActionListener {
 
     public PatternView(List<SearchPattern> patterns, IPatternController controller) {
         model = patterns;
+        this.controller = controller;
         createUIComponents();
     }
 

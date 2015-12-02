@@ -4,14 +4,10 @@ import pl.edu.agh.to2.frazeusz.models.SearchPattern;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.IMatcher;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex.EmptyStrategy;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex.RegexMatcher;
-import pl.edu.agh.to2.frazeusz.pattern_matcher.views.PatternView;
 
 import javax.swing.*;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,7 +15,9 @@ public class Main {
 
     private static void createGUI() {
         JFrame frame = new JFrame("PatternUI");
-        frame.setContentPane(new PatternView());
+        IPatternController patternController = new PatternController();
+        patternController.init();
+        frame.setContentPane(patternController.getView());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -27,7 +25,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        createGUI();
+        createGUI();
 
         String[] patterns = {
                 "to",
