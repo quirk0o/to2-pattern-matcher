@@ -5,11 +5,11 @@ import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
 import java.util.*;
 import java.util.regex.Pattern;
 
-public class ListMatchingStrategy extends AbstractMatchingStrategy {
+public class MultiStrategy extends AbstractMatchingStrategy {
 
     private List<IMatchingStrategy> strategies = new LinkedList<>();
 
-    public ListMatchingStrategy(List<IMatchingStrategy> strategies, IWordProvider wordProvider) {
+    public MultiStrategy(List<IMatchingStrategy> strategies, IWordProvider wordProvider) {
         super(wordProvider);
         this.strategies = strategies;
     }
