@@ -1,8 +1,9 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher;
 
-import pl.edu.agh.to2.frazeusz.models.SearchPattern;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.ui.models.SearchPattern;
 import pl.edu.agh.to2.frazeusz.monitor.MonitorPubSub;
 import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.ui.controllers.PatternController;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.swing.*;

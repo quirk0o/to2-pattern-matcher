@@ -1,7 +1,7 @@
-package pl.edu.agh.to2.frazeusz.pattern_matcher;
+package pl.edu.agh.to2.frazeusz.pattern_matcher.ui.controllers;
 
-import pl.edu.agh.to2.frazeusz.models.SearchPattern;
-import pl.edu.agh.to2.frazeusz.pattern_matcher.views.PatternView;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.ui.models.SearchPattern;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.ui.views.PatternView;
 
 import javax.swing.*;
 import java.util.List;

@@ -1,10 +1,11 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher;
 
-import pl.edu.agh.to2.frazeusz.models.SearchPattern;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.ui.models.SearchPattern;
 import pl.edu.agh.to2.frazeusz.nlprocessor.MockWordProvider;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.IMatcher;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex.EmptyStrategy;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex.RegexMatcher;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.ui.controllers.PatternController;
 
 import javax.swing.*;
 import java.io.FileInputStream;

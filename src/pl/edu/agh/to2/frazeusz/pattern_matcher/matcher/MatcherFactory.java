@@ -1,13 +1,10 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher.matcher;
 
-import pl.edu.agh.to2.frazeusz.models.SearchPattern;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.ui.models.SearchPattern;
 import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
-import pl.edu.agh.to2.frazeusz.pattern_matcher.IPatternMatcher;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MatcherFactory {

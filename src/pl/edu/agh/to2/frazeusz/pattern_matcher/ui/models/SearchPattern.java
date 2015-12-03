@@ -1,4 +1,4 @@
-package pl.edu.agh.to2.frazeusz.models;
+package pl.edu.agh.to2.frazeusz.pattern_matcher.ui.models;
 
 public class SearchPattern {
     private String pattern = "";
@@ -25,7 +25,7 @@ public class SearchPattern {
     public String getPattern() {
         return pattern;
     }
-    public void setPattern(final String pattern) {
+    public void setPattern(String pattern) {
         this.pattern = pattern;
     }
 
