@@ -43,8 +43,8 @@ public abstract class AbstractMatchingStrategy implements IMatchingStrategy {
     }
 
     @Override
-    public List<String> getWords(String pattern) {
-        return new ArrayList<>();
+    public Set<String> getWords(String pattern) {
+        return new HashSet<>();
     }
 
     @Override
