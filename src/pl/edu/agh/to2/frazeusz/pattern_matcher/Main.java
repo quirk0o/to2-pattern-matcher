@@ -17,7 +17,7 @@ public class Main {
 
     private static void createGUI() {
         JFrame frame = new JFrame("PatternUI");
-        IPatternController patternController = new PatternController(new ArrayList<>());
+        PatternController patternController = new PatternController(new ArrayList<>());
         patternController.init();
         frame.setContentPane(patternController.getView());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

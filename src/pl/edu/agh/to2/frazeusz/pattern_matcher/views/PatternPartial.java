@@ -1,7 +1,7 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher.views;
 
 import pl.edu.agh.to2.frazeusz.models.SearchPattern;
-import pl.edu.agh.to2.frazeusz.pattern_matcher.IPatternController;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.PatternController;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class PatternPartial extends JPanel {
 
     private SearchPattern model;
-    private IPatternController controller;
+    private PatternController controller;
 
     private JTextField patternTextField;
     private JButton deleteButton;

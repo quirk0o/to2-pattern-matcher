@@ -38,7 +38,7 @@ public class PatternMatcher implements IPatternMatcher {
 
     @Override
     public JPanel getView() {
-        IPatternController controller = new PatternController(patterns);
+        PatternController controller = new PatternController(patterns);
         controller.init();
         return controller.getView();
     }

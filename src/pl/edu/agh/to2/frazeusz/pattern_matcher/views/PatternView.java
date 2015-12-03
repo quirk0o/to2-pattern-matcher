@@ -1,7 +1,7 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher.views;
 
 import pl.edu.agh.to2.frazeusz.models.SearchPattern;
-import pl.edu.agh.to2.frazeusz.pattern_matcher.IPatternController;
+import pl.edu.agh.to2.frazeusz.pattern_matcher.PatternController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,13 +12,13 @@ import java.util.List;
 public class PatternView extends JPanel implements ActionListener {
 
     private List<SearchPattern> model;
-    private IPatternController controller;
+    private PatternController controller;
 
     private JPanel patternPanel;
     private JPanel buttonPanel;
     private JButton addButton;
 
-    public PatternView(List<SearchPattern> patterns, IPatternController controller) {
+    public PatternView(List<SearchPattern> patterns, PatternController controller) {
         model = patterns;
         this.controller = controller;
         createUIComponents();
