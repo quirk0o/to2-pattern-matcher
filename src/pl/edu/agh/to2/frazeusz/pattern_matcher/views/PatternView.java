@@ -30,12 +30,19 @@ public class PatternView extends JPanel implements ActionListener {
         patternPanel.add(partial);
         patternPanel.revalidate();
         validate();
+        JFrame frame = (JFrame) SwingUtilities.windowForComponent(this);
+        if (frame != null)
+            frame.pack();
+
     }
 
     private void removePatternInput(PatternPartial pattern) {
         patternPanel.remove(pattern);
         patternPanel.revalidate();
         validate();
+        JFrame frame = (JFrame) SwingUtilities.windowForComponent(this);
+        if (frame != null)
+            frame.pack();
     }
 
     private void createUIComponents() {
