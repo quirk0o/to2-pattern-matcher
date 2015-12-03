@@ -45,7 +45,7 @@ public abstract class AbstractMatchingStrategy implements IMatchingStrategy {
     }
 
     @Override
-    public int getFlags(String pattern) {
+    public int getFlags() {
         return 0;
     }
 }

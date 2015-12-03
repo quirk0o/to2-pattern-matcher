@@ -7,6 +7,6 @@ import java.util.regex.Pattern;
 public interface IMatchingStrategy {
     String format(String pattern);
     Pattern compile(String pattern);
-    int getFlags(String pattern);
     Map<String, Set<String>> getWords(String pattern);
+    int getFlags();
 }
