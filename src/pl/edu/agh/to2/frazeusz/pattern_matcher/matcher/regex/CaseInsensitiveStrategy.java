@@ -14,4 +14,9 @@ public class CaseInsensitiveStrategy extends AbstractMatchingStrategy {
     public Pattern compile(String pattern) {
         return Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
     }
+
+    @Override
+    public int getFlags() {
+        return Pattern.CASE_INSENSITIVE;
+    }
 }
