@@ -1,11 +1,13 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex;
 
+import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
+
 import java.util.regex.Pattern;
 
-public class CaseInsensitiveStrategy implements IMatchingStrategy {
-    @Override
-    public String format(String pattern) {
-        return pattern;
+public class CaseInsensitiveStrategy extends AbstractMatchingStrategy {
+
+    public CaseInsensitiveStrategy(IWordProvider wordProvider) {
+        super(wordProvider);
     }
 
     @Override

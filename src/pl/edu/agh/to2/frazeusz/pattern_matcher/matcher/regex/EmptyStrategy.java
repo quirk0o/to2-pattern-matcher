@@ -1,15 +1,12 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex;
 
+import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
+
 import java.util.regex.Pattern;
 
-public class EmptyStrategy implements IMatchingStrategy {
-    @Override
-    public String format(String pattern) {
-        return pattern;
-    }
+public class EmptyStrategy extends AbstractMatchingStrategy {
 
-    @Override
-    public Pattern compile(String pattern) {
-        return Pattern.compile(pattern);
+    public EmptyStrategy(IWordProvider wordProvider) {
+        super(wordProvider);
     }
 }

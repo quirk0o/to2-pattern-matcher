@@ -1,15 +1,17 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex;
 
+import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
+
 import java.util.regex.Pattern;
 
-public class SynonymStrategy implements IMatchingStrategy {
-    @Override
-    public String format(String pattern) {
-        return null;
+public class SynonymStrategy extends AbstractMatchingStrategy {
+
+    public SynonymStrategy(IWordProvider wordProvider) {
+        super(wordProvider);
     }
 
     @Override
-    public Pattern compile(String pattern) {
-        return Pattern.compile(pattern);
+    public String format(String pattern) {
+        return null;
     }
 }
