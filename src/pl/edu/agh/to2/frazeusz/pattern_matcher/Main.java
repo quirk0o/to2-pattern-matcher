@@ -1,6 +1,7 @@
 package pl.edu.agh.to2.frazeusz.pattern_matcher;
 
 import pl.edu.agh.to2.frazeusz.models.SearchPattern;
+import pl.edu.agh.to2.frazeusz.nlprocessor.MockWordProvider;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.IMatcher;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex.EmptyStrategy;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex.RegexMatcher;
@@ -50,7 +51,7 @@ public class Main {
 
             for (String pattern : patterns) {
                 System.out.println(pattern);
-                IMatcher matcher = new RegexMatcher(new SearchPattern(pattern), new EmptyStrategy());
+                IMatcher matcher = new RegexMatcher(new SearchPattern(pattern), new EmptyStrategy(new MockWordProvider()));
 
                 double start = System.currentTimeMillis();
 

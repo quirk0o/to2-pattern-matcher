@@ -4,7 +4,6 @@ import pl.edu.agh.to2.frazeusz.models.SearchPattern;
 import pl.edu.agh.to2.frazeusz.pattern_matcher.views.PatternView;
 
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PatternController implements IPatternController {
