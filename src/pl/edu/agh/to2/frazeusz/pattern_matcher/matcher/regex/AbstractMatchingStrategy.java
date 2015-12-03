@@ -2,10 +2,7 @@ package pl.edu.agh.to2.frazeusz.pattern_matcher.matcher.regex;
 
 import pl.edu.agh.to2.frazeusz.nlprocessor.IWordProvider;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -43,8 +40,8 @@ public abstract class AbstractMatchingStrategy implements IMatchingStrategy {
     }
 
     @Override
-    public Set<String> getWords(String pattern) {
-        return new HashSet<>();
+    public Map<String, Set<String>> getWords(String pattern) {
+        return new HashMap<>();
     }
 
     @Override
